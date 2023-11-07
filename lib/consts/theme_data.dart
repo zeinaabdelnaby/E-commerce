@@ -9,12 +9,12 @@ class Styles {
     return ThemeData(
         scaffoldBackgroundColor: isDarktheme
             ? AppColors.darkScaffoldColor
-            : AppColors.lightScaffoldColor);
-    cardColor:
-    isDarktheme
+            : AppColors.lightScaffoldColor,
+    cardColor:isDarktheme
         ? const Color.fromARGB(255, 13, 6, 37)
-        : AppColors.lightCardColor;
+        : AppColors.lightCardColor,
     brightness:
-    isDarktheme ? Brightness.dark : Brightness.light;
+    isDarktheme ? Brightness.dark : Brightness.light,
+    );
   }
 }

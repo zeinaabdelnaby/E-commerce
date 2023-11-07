@@ -1,7 +1,9 @@
 import 'package:e_commerce/consts/theme_data.dart';
+import 'package:e_commerce/providers/theme_provider.dart';
 import 'package:e_commerce/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,10 +19,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'shop smart AR',
-      theme: Styles.themeData(isDarktheme: false, context: context),
-      home: const HomeScreen(),
+    // final themeProvider = Provider.of<ThemeProvider>(context);
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) {
+          return ThemeProvider();
+        })
+      ],
+      child: Consumer<ThemeProvider>(builder: (context, themeProvider, child) {
+        return MaterialApp(
+          title: 'shop smart AR',
+          theme: Styles.themeData(
+              isDarktheme: themeProvider.getIsDarkTheme, context: context),
+          home: const HomeScreen(),
+          debugShowCheckedModeBanner: false,
+        );
+      }),
     );
   }
 }
