@@ -1,6 +1,7 @@
 import 'package:e_commerce/consts/theme_data.dart';
 import 'package:e_commerce/providers/theme_provider.dart';
 import 'package:e_commerce/screens/home_screen.dart';
+import 'package:e_commerce/screens/root_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
           title: 'shop smart AR',
           theme: Styles.themeData(
               isDarktheme: themeProvider.getIsDarkTheme, context: context),
-          home: const HomeScreen(),
+          home: const RootScreen(),
           debugShowCheckedModeBanner: false,
         );
       }),
