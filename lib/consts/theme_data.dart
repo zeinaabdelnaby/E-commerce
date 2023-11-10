@@ -10,11 +10,17 @@ class Styles {
         scaffoldBackgroundColor: isDarktheme
             ? AppColors.darkScaffoldColor
             : AppColors.lightScaffoldColor,
-    cardColor:isDarktheme
-        ? const Color.fromARGB(255, 13, 6, 37)
-        : AppColors.lightCardColor,
-    brightness:
-    isDarktheme ? Brightness.dark : Brightness.light,
-    );
+        cardColor: isDarktheme
+            ? const Color.fromARGB(255, 13, 6, 37)
+            : AppColors.lightCardColor,
+        brightness: isDarktheme ? Brightness.dark : Brightness.light,
+        appBarTheme: AppBarTheme(
+            backgroundColor: isDarktheme
+                ? AppColors.darkScaffoldColor
+                : AppColors.lightScaffoldColor,
+            elevation: 0,
+            centerTitle: false,
+            titleTextStyle:
+                TextStyle(color: isDarktheme ? Colors.white : Colors.black)));
   }
 }
