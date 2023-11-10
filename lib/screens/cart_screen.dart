@@ -1,3 +1,4 @@
+import 'package:e_commerce/widgets.dart/empty_bag.dart';
 import 'package:flutter/material.dart';
 
 class CartScreen extends StatelessWidget {
@@ -5,6 +6,10 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text("cart")),);
+    Size size = MediaQuery.of(context).size;
+
+    return Scaffold(
+        body:EmptyBagWidget(imagePath: "assets/images/shopping_cart.png", title: "Whoooops", subTitle: "Look like you didn\'t add anything to your card \ngo ahead and start shopping now", buttonText: "Shop now")
+         );
   }
 }
