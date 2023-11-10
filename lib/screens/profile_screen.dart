@@ -1,4 +1,5 @@
 import 'package:e_commerce/providers/theme_provider.dart';
+import 'package:e_commerce/widgets.dart/app_name_text.dart';
 import 'package:e_commerce/widgets.dart/subTitle_text.dart';
 import 'package:e_commerce/widgets.dart/title_text.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +15,11 @@ class ProfileScreen extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Profile"),
-          leading: Image.asset("admin assets/assets/images/shopping_cart.png"),
+          title: AppNameTextWidget(fontsize: 20,),
+          leading: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Image.asset("assets/images/shopping_cart.png"),
+          ),
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,22 +72,22 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   TitleTextWidget(label: "General"),
                   CustomListTile(
-                    image: "assets/images/dashboard/order.png",
+                    image: "assets/images/order.png",
                     text: "All orders",
                     function: () {},
                   ),
                   CustomListTile(
-                    image: "assets/images/dashboard/wishlist.png",
+                    image: "assets/images/wishlist.png",
                     text: "Wish list",
                     function: () {},
                   ),
                   CustomListTile(
-                    image: "assets/images/dashboard/Viewdrecently.png",
+                    image: "assets/images/Viewdrecently.png",
                     text: "Viewd recently",
                     function: () {},
                   ),
                   CustomListTile(
-                    image: "assets/images/dashboard/rounded_map.png",
+                    image: "assets/images/rounded_map.png",
                     text: "Address",
                     function: () {},
                   ),
